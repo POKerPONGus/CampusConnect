@@ -1,4 +1,4 @@
-import math
+
 
 class Course:
     def __init__(self, capacity):
