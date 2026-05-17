@@ -25,7 +25,24 @@ class TestCampusConnectFunctional(unittest.TestCase):
         self.assertEqual(actual_result, "Already enrolled")
 
     # 4. Boundary Value Analysis (BVA)
-    def test_functional_enroll_at_capacity_boundary_returns_course_full(self):
+    def test_functional_enroll_below_capacity_boundary_returns_success(self):
+        # We test the exact boundary by setting capacity to 2
+        course = Course(capacity=2)
+        
+        # Course is below the boundary
+        actual_result = course.enroll_student("student_1")
+        self.assertEqual(actual_result, "Success")
+
+    def test_functional_enroll_at_capacity_boundary_returns_success(self):
+        # We test the exact boundary by setting capacity to 2
+        course = Course(capacity=2)
+        course.enroll_student("student_1")
+        
+        # Course is now at exact boundary
+        actual_result = course.enroll_student("student_2")
+        self.assertEqual(actual_result, "Success")
+
+    def test_functional_enroll_above_capacity_boundary_returns_course_full(self):
         # We test the exact boundary by setting capacity to 2
         course = Course(capacity=2)
         course.enroll_student("student_1")
@@ -33,7 +50,7 @@ class TestCampusConnectFunctional(unittest.TestCase):
         
         # Action just above the boundary
         actual_result = course.enroll_student("student_3")
-        self.assertEqual(actual_result, "Course full")
+        self.assertEqual(actual_result, "Course full")    
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
