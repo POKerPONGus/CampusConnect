@@ -70,14 +70,15 @@ def test_course_full_shows_warning():
 
         enroll_box.fill("student_2")
         page.get_by_role("button", name="Enroll").click()
+        expect(page.get_by_text("Student enrolled successfully")).to_be_visible()
 
         enroll_box.fill("student_3")
         page.get_by_role("button", name="Enroll").click()
+        expect(page.get_by_text("Student enrolled successfully")).to_be_visible()
 
         # Attempt extra enrollment
         enroll_box.fill("student_4")
         page.get_by_role("button", name="Enroll").click()
-
         expect(page.get_by_text("Course full")).to_be_visible()
 
         browser.close()
