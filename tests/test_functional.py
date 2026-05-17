@@ -36,4 +36,4 @@ class TestCampusConnectFunctional(unittest.TestCase):
         self.assertEqual(actual_result, "Course full")
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
