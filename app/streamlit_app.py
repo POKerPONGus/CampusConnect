@@ -1,5 +1,5 @@
 import streamlit as st
-from app.enrollment import Course
+from enrollment import Course
 
 # Initialize session state
 if "course" not in st.session_state:

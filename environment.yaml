@@ -1,0 +1,8 @@
+name: CampusConnect
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytest-playwright
+  - streamlit

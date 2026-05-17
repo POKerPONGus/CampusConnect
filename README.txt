@@ -6,7 +6,7 @@ python -m playwright install
 
 Run the Streamlit App:
 
-python -m streamlit run streamlit_app.py
+python -m streamlit run app/streamlit_app.py
 
 
 Then open:
@@ -34,7 +34,7 @@ Run Playwright UI Tests:
 
 First, start the Streamlit app in one terminal:
 
-python -m streamlit run streamlit_app.py
+python -m streamlit run app/streamlit_app.py
 
 Then open a second terminal and run:
 
